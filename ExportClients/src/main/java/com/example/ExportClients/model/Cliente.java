@@ -1,16 +1,30 @@
 package com.example.ExportClients.model;
 
+import org.springframework.context.annotation.Bean;
+
+
 public class Cliente {
-    private Long id;
+    private Long   id;
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
 
+    
     public Cliente() {
+
     }
 
-    public Long getId() {
+    public Cliente(Long id, String nombre, String apellido, String email, String telefono) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+		this.telefono = telefono;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -49,4 +63,12 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
+				+ ", telefono=" + telefono + "]";
+	}
+    
+    
 }
